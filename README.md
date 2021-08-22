@@ -1,4 +1,4 @@
-#URL Shortening Service
+##URL Shortening Service
 
 
 ### 개발 스펙
@@ -7,7 +7,6 @@
 * Jpa
 * H2 (in-memory) , 서비스 재시작시 초기화
 * Thymeleaf
-* JUnit 4.13.1
 * Gradle
 
 ### 서비스 설명
@@ -27,26 +26,24 @@
 
 해당 서비스를 빌드, 실행하기 위해서 아래 내역을 우선 확인하시기 바랍니다.
 
-1) JDK
-   1) 설치여부 확인 : 
-   2) 설치 방법 : 
-2) Gradle
-   1) 설치여부 확인 :
-   2) 설치 방법 :
-3) Git
-   1) 설치여부 확인 :
-   2) 설치 방법 :
+1) JDK 설치 확인 : java --version 
+2) Gradle 설치 확인 : gradle --version
+3) Git 설치확인 : git --version
 
    
 
 빌드 및 실행방법
 
-첫번째. git clone 명령으로 해당 프로젝트 파일을 받아온다.
+1. git clone 명령으로 해당 프로젝트 파일을 받아옵니다.
+   1. git clone https://github.com/91johnkim/url-shortening-service.git
 
+2. Gradle로 해당 프로젝트를 빌드한다. gradle bulid 디렉터리에 산출물 확인
+   1. cd url-shortening-service
+   2. ./gradlew clean build
+   3. url-shortening-service/build/libs/ 에 산출물 생성 확인
 
-두번째. Gradle로 해당 프로젝트를 빌드한다.
-
-
-세번째. Java 명령으로 빌드파일을 실행시킨다.
+3. Java 명령으로 빌드된 파일을 실행시킵니다.
+   1. java -jar 산출물.jar 
+   
 
 
