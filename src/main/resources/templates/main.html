@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="/webjars/jquery/3.6.0/dist/jquery.js"></script>
+    <title>URL Shortening Service</title>
+</head>
+<body>
+    <div th:align="center">
+        <h1>URL Shortening Service</h1>
+
+        <div>
+            <span>
+                <input type="text" id="targetPath" style="width:25%"/>
+                <button type="button" onclick="convert()">변환</button>
+            </span>
+        </div>
+        <div>
+            <a id="convertedPath"></a>
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+    let urlShortenerApi = 'api/v1/url-shortener';
+
+    function convert(){
+        let targetPath = $("#targetPath").val();
+        $.ajax({
+            url:urlShortenerApi,
+            data:JSON.stringify({'path':targetPath}),
+            contentType:'application/json',
+            method:'POST',
+            success:function(response){
+                let path = window.location.href+ response.shorten;
+                $("#convertedPath").attr("href",path);
+                $("#convertedPath").attr("target","_blank");
+                $("#convertedPath").text(path);
+            },
+            error:function(error){
+                console.log(error);
+            }
+        })
+
+    }
+</script>
+
+</html>
