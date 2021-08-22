@@ -38,10 +38,10 @@
 1. git clone 명령으로 해당 프로젝트 파일을 받아옵니다.
    1. git clone https://github.com/91johnkim/url-shortening-service.git
 
-2. Gradle로 해당 프로젝트를 빌드한다. gradle bulid 디렉터리에 산출물 확인
+2. Gradle로 해당 프로젝트를 빌드 합니다. project의 bulid 디렉터리에 산출물을 확인합니다.
    1. cd url-shortening-service
    2. ./gradlew clean build
-   3. url-shortening-service/build/libs/ 에 산출물 생성 확인
+   3. url-shortening-service/build/libs/ 
 
 3. Java 명령으로 빌드된 파일을 실행시킵니다.
    1. java -jar 산출물.jar 
